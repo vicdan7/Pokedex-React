@@ -1,0 +1,29 @@
+.title-style{
+    min-height: 15vh;
+    background: linear-gradient(180deg,rgb(209, 70, 70) 0 65%,#191919 55% 100%);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-width: 200px;
+}
+p{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem 0; 
+    padding-top: 1em;
+    padding: 0.8em;
+    text-align: center;
+}
+.span-style{
+    color: rgb(209, 70, 70);
+    font-weight: 700;
+    font-size: 40px;
+}
+.form-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}

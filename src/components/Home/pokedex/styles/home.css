@@ -1,0 +1,89 @@
+body{
+    background-color: rgb(216, 209, 209);
+}
+.home-img{
+    display: block;
+    width: 100%;
+    padding: 0.8em;
+}
+.home-h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(235, 66, 66);
+    margin-top: 1.5rem;
+    transition: color .3s;
+    text-align: center;
+}
+.home-p{
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: black;
+    transition: color .3s;
+    text-align: center;
+}
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+.home-footer{
+    min-height: 15vh;
+    width: 100%;
+    background: linear-gradient(180deg,rgb(197, 53, 53) 0 60%,rgb(25,25,25) 60% 100%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.home-footer_circle{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid black;
+    background: white;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-footer_circle2{
+    width: 80%;
+    height: 80%;
+    background: rgb(64,64,64);
+    border-radius: 50%;
+    border: 10px solid black;
+}
+.input-style button{
+    color: rgb(61, 59, 59);
+    font-size: 1.3rem;
+}
+input{
+    background: white;
+    box-shadow: 0 2px 5px #998e8e4f;
+    padding: 0 20px;
+    margin-right: 1em;
+}
+input, button{
+    height: 50px;
+    border: none;
+    border-radius: 1em;
+    box-shadow: 0 0 20px #080101e3;
+    transition: transform 100ms ease;
+}
+input, button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+button{
+    background: rgb(209, 86, 86);
+    color: #fff;
+    padding: 0 10px;
+    font-size: 1.5rem;
+    transition: background .3s;
+    cursor: pointer;
+    padding-inline: 1em;
+    padding-bottom: 0.2em;
+}
