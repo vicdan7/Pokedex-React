@@ -150,7 +150,7 @@ header {
 }
 
 .error-style {
-  background-image: url(../../../../../public/pika.gif);
+  background-image: url(../../../../assets/images/pika.gif);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 100%;
