@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { useEffect } from "react";
+import pokedex from "../assets/images/pokedex.png";
+import goback from "../assets/images/goback.png";
+import { Link } from "react-router-dom";
 import "../components/Home/pokedex/styles/pokeInfo.css";
 import "../components/Home/pokedex/styles/pokeCard.css";
-import pokedex from "../../public/pokedex.png";
-import goback from "../../public/goback.png";
-import { Link } from "react-router-dom";
 
 const PokeInfo = () => {
   const { name } = useParams();
@@ -24,7 +24,7 @@ const PokeInfo = () => {
     <div className="dad-style">
       {hasError ? (
         <div className="error-style">
-          <Link to='/pokedex'>
+          <Link to="/pokedex">
             <img className="style-img-goback" src={goback} alt="go-back" />
           </Link>
           <h1>This pokemon doesnt exist!!</h1>
