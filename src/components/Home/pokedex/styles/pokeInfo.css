@@ -24,8 +24,9 @@ header {
 .style-bg {
   border-radius: 2em;
   margin: 4rem 2rem;
-  box-shadow: 0 0 20px #0c010132;
   transition: transform 100ms ease;
+  box-shadow: 0px 0px 5px #100f11, 0px 0px 10px #111011, 0px 0px 10px #19161d,
+  0px 0px 20px #111111;
 }
 .style-bg:hover {
   cursor: pointer;
@@ -64,10 +65,10 @@ header {
   border-radius: 15px;
   box-shadow: 0 0 20px #00000032;
   background-color: rgba(36, 168, 205, 0.458);
-  transition: transform 100ms ease;
+  transition: transform 2s;
 }
 .style-items:hover {
-  transform: scale(1.05);
+  transform: rotateX(360deg);
 }
 .style-section {
   margin-top: 4em;

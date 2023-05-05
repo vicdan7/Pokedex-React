@@ -17,11 +17,15 @@
   position: relative;
 }
 .pokemon-sprite {
-  width: 60%;
+  width: 50%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 20%;
+  transition: transform .5s;
+}
+.pokemon-sprite:hover{
+  transform: scale(1.3);
 }
 .pokemon-body {
   padding: 1em;
