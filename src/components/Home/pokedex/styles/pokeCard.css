@@ -26,6 +26,7 @@
 .pokemon-body {
   padding: 1em;
   padding-top: 50px;
+  background-color: beige;
 }
 .pokemon-name {
   text-align: center;
@@ -252,7 +253,7 @@
   color: #728881;
 }
 .color-electric {
-  color: rgba(255, 247, 178, 1);
+  color: rgb(222, 205, 48);
 }
 .color-psychic {
   color: #d13e3e;

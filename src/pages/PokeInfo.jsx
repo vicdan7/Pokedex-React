@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import "../components/Home/pokedex/styles/pokeInfo.css";
 import "../components/Home/pokedex/styles/pokeCard.css";
 import pokedex from "../../public/pokedex.png";
+import goback from "../../public/goback.png";
+import { Link } from "react-router-dom";
 
 const PokeInfo = () => {
   const { name } = useParams();
@@ -21,13 +23,21 @@ const PokeInfo = () => {
   return (
     <div className="dad-style">
       {hasError ? (
-        <h1>This pokemon doesnt exist!!</h1>
+        <div className="error-style">
+          <Link to='/pokedex'>
+            <img className="style-img-goback" src={goback} alt="go-back" />
+          </Link>
+          <h1>This pokemon doesnt exist!!</h1>
+        </div>
       ) : (
         <>
           <header className="title-info">
             <img src={pokedex} alt="" />
           </header>
           <div className="style-img">
+            <Link to="/pokedex">
+              <img className="style-img-goback" src={goback} alt="go-back" />
+            </Link>
             <img
               className={`style-bg bg-${pokemon?.types[0].type.name}`}
               src={pokemon?.sprites.other["official-artwork"].front_default}
@@ -35,16 +45,26 @@ const PokeInfo = () => {
             />
           </div>
           <div className="style-head">
-            <span className={`style-id color-${pokemon?.types[0].type.name}`}  >#{pokemon?.id}</span>
-            <h2 className={`style-name color-${pokemon?.types[0].type.name}`}>{pokemon?.name}</h2>
+            <span className={`style-id color-${pokemon?.types[0].type.name}`}>
+              #{pokemon?.id}
+            </span>
+            <h2 className={`style-name color-${pokemon?.types[0].type.name}`}>
+              {pokemon?.name}
+            </h2>
           </div>
-            <hr />
+          <hr />
           <div className="style-items">
             <span>
-              Height <p className={`color-${pokemon?.types[0].type.name}`} >{pokemon?.height}</p>
+              Height{" "}
+              <p className={`color-${pokemon?.types[0].type.name}`}>
+                {pokemon?.height}
+              </p>
             </span>
             <span>
-              Weight <p className={`color-${pokemon?.types[0].type.name}`} >{pokemon?.weight}</p>
+              Weight{" "}
+              <p className={`color-${pokemon?.types[0].type.name}`}>
+                {pokemon?.weight}
+              </p>
             </span>
           </div>
           <div>
@@ -67,7 +87,7 @@ const PokeInfo = () => {
               </div>
               <hr className="style-hr" />
             </section>
-           
+
             <ul className="stats-style">
               Stats
               {pokemon?.stats.map((objStat) => (
