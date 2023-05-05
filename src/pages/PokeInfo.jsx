@@ -25,9 +25,9 @@ const PokeInfo = () => {
       {hasError ? (
         <div className="error-style">
           <Link to="/pokedex">
-            <img className="style-img-goback" src={goback} alt="go-back" />
+            <img className="style-img-goback2" src={goback} alt="go-back" />
           </Link>
-          <h1>This pokemon doesnt exist!!</h1>
+          <h1 className="text-error-style">This pokemon doesnt exist!!</h1>
         </div>
       ) : (
         <>

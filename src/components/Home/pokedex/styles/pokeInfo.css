@@ -148,6 +148,14 @@ header {
   left: 42%;
   cursor: pointer;
 }
+.style-img-goback2{
+  max-width: 3rem;
+  min-width: 6em;
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  cursor: pointer;
+}
 
 .error-style {
   background-image: url(../../../../assets/images/pika.gif);
@@ -158,6 +166,12 @@ header {
   display: grid;
   align-items: center;
   text-align: center;
+  border-radius: 1em;
+}
+.text-error-style{
+  text-align: center;
+  background-color: rgba(0, 255, 255, 0.699);
+  border-radius: 1em;
 }
 
 @media (min-width: 700px) {

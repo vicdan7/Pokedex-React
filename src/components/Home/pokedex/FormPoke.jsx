@@ -27,7 +27,7 @@ const Formpoke = ({ setFormUrl, urlBase }) => {
   return (
     <div>
       <form className="form-style" onSubmit={handleSubmit}>
-        <input ref={inputPoke} type="text" />
+        <input ref={inputPoke} type="text" placeholder="Here your pokemon" />
         <button>Search</button>
       </form>
       <select onChange={handleChange}>
