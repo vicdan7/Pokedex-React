@@ -5,7 +5,8 @@ import Pokedex from './pages/Pokedex'
 import ProtectedRoutes from './pages/ProtectedRoutes'
 import PokeInfo from './pages/PokeInfo'
 import { useState } from 'react'
-import PokeLoad from "./components/Home/Pokedex/PokeLoad";
+import PokeLoad from './components/Home/Pokedex/PokeLoad'
+
 
 function App( ) {
   const [loading, setLoading] = useState(false);
