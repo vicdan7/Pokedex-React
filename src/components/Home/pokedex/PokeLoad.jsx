@@ -1,4 +1,4 @@
-import "./styles/pokeload.css";
+import React from "react";
 
 const PokeLoad = () => {
   return (

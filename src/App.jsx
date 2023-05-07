@@ -5,7 +5,8 @@ import Pokedex from './pages/Pokedex'
 import ProtectedRoutes from './pages/ProtectedRoutes'
 import PokeInfo from './pages/PokeInfo'
 import { useState } from 'react'
-import PokeLoad from './components/Home/Pokedex/PokeLoad'
+import PokeLoad from './components/Home/pokedex/PokeLoad'
+
 
 
 function App( ) {
@@ -27,7 +28,7 @@ function App( ) {
           />
         </Route>
       </Routes>
-      {loading && <PokeLoad />}
+      {loading && <PokeLoad/>}
     </div>
   );
 }
