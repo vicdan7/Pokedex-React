@@ -1,24 +1,34 @@
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Pokedex from './pages/Pokedex'
 import ProtectedRoutes from './pages/ProtectedRoutes'
 import PokeInfo from './pages/PokeInfo'
+import { useState } from 'react'
+import PokeLoad from "./components/Home/Pokedex/PokeLoad";
 
-function App() {
+function App( ) {
+  const [loading, setLoading] = useState(false);
 
 
   return (
-    <div className='app'>
+    <div className="app">
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path='/pokedex' element={<Pokedex />} />
-          <Route path='/pokedex/:name' element={<PokeInfo />} />
+          <Route
+            path="/pokedex"
+            element={<Pokedex setLoading={setLoading} />}
+          />
+          <Route
+            path="/pokedex/:name"
+            element={<PokeInfo setLoading={setLoading} />}
+          />
         </Route>
       </Routes>
+      {loading && <PokeLoad />}
     </div>
-  )
+  );
 }
 
 export default App

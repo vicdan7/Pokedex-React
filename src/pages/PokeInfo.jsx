@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import "../components/Home/pokedex/styles/pokeInfo.css";
 import "../components/Home/pokedex/styles/pokeCard.css";
 
-const PokeInfo = () => {
+const PokeInfo = ({ setLoading }) => {
   const { name } = useParams();
 
   const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
@@ -18,7 +18,20 @@ const PokeInfo = () => {
     getPokemonByName();
   }, [name]);
 
-  console.log(pokemon);
+  useEffect(() => {
+    setLoading(true);
+    if (window) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (pokemon || hasError) {
+      setLoading(false);
+    }
+  }, [pokemon, hasError]);
+
+  const percent = (value) => (value * 100) / 200;
 
   return (
     <div className="dad-style">
@@ -95,7 +108,11 @@ const PokeInfo = () => {
                   className="stats-li"
                   key={objStat.stat.url}
                   style={{
-                    background: `linear-gradient(90deg, rgb(230, 144, 30) 0px, rgb(252, 214, 118) ${objStat.base_stat}%, rgb(231, 231, 231) ${objStat.base_stat}%, rgb(231, 231, 231) 100%)`,
+                    background: `linear-gradient(90deg, rgb(230, 144, 30) 0px, rgb(252, 214, 118) ${percent(
+                      objStat.base_stat
+                    )}%, rgb(231, 231, 231) ${percent(
+                      objStat.base_stat
+                    )}%, rgb(231, 231, 231) 100%)`,
                   }}
                 >
                   <span className="pokemon-stats_label">
@@ -104,7 +121,7 @@ const PokeInfo = () => {
                   <span
                     className={`pokemon-stats_value color-${pokemon?.types[0].type.name}`}
                   >
-                    {objStat.base_stat}
+                    {objStat.base_stat}/200
                   </span>
                 </li>
               ))}

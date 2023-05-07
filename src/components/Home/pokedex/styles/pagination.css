@@ -1,0 +1,36 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .pagination .page-item {
+    margin: 0 8px;
+  }
+  ul.MuiPagination-ul {
+    background-color: rgba(0, 0, 0, 0.77);
+    padding: 1em;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 2em;
+    margin-inline: 30em;
+  }
+  
+  ul.MuiPagination-ul li button {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+  }
+  
+  .Mui-selected {
+    background-color: #f21919;
+    color: #ffffff;
+  }
+  
+  .MuiPaginationItem-root:not(.Mui-selected) {
+    color: #d21919;
+  }
+  

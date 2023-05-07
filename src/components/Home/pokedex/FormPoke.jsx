@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
-const Formpoke = ({ setFormUrl, urlBase }) => {
+const Formpoke = ({ setFormUrl, urlBase, setLoading }) => {
   const inputPoke = useRef();
 
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ const Formpoke = ({ setFormUrl, urlBase }) => {
   };
 
   const handleChange = (e) => {
+    setLoading(true);
     setFormUrl(e.target.value);
   };
 

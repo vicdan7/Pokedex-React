@@ -22,7 +22,7 @@ header {
   position: relative;
 }
 .style-bg {
-  border-radius: 2em;
+  border-radius: 48%;
   margin: 4rem 2rem;
   transition: transform 100ms ease;
   box-shadow: 0px 0px 5px #100f11, 0px 0px 10px #111011, 0px 0px 10px #19161d,

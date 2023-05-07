@@ -1,42 +1,55 @@
-import React, { useEffect } from 'react';
-import useFetch from '../../../hooks/useFetch';
-import PokeCard from './PokeCard';
+import React, { useEffect, useState } from "react";
+import useFetch from "../../../hooks/useFetch";
+import PokeCard from "./PokeCard";
+import PokePagination from "./PokePagination";
+import "./styles/pokecontainer.css";
 
-
-const PokeContainer = ({ formUrl }) => {
-  
-  const [ pokemons, getAllPokemons ] = useFetch(formUrl)
+const PokeContainer = ({ formUrl, setLoading }) => {
+  const [pokemons, getAllPokemons] = useFetch(formUrl);
+  const [data, setData] = useState();
 
   useEffect(() => {
-   getAllPokemons()
+    getAllPokemons();
   }, [formUrl]);
 
+  useEffect(() => {
+    console.warn(pokemons);
+    if (pokemons) {
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
+  }, [pokemons]);
 
   return (
-    <div className='poke-container'>
-       {
-        pokemons?.results 
-          ? (
-            pokemons?.results.map(pokemon => (
-              <PokeCard 
-                key={pokemon.url}
-                url={pokemon.url}
+    <>
+      <PokePagination
+        rows={pokemons?.results?.length || pokemons?.pokemon?.length}
+        data={pokemons?.results || pokemons?.pokemon}
+        setData={setData}
+      />
+      <div className="poke-Container">
+        {data &&
+          data.map((pokemon) => {
+            console.log(pokemon);
+            return (
+              <PokeCard
+                key={
+                  pokemon && pokemon?.pokemon
+                    ? pokemon.pokemon.name
+                    : pokemon.name
+                }
+                url={
+                  pokemon && pokemon?.pokemon
+                    ? pokemon.pokemon.url
+                    : pokemon.url
+                }
               />
-            ))
-          )
-
-          : (
-            pokemons?.pokemon.map(objPoke => (
-              <PokeCard 
-                key={objPoke.pokemon.url}
-                url={objPoke.pokemon.url}
-              />
-            ))
-          )
-       
-       }
-    </div>
+            );
+          })}
+      </div>
+    </>
   );
-}
+};
 
 export default PokeContainer;
