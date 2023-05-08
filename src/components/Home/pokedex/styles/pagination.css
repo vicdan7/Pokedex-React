@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     border-radius: 2em;
-    margin-inline: 30em;
+    margin-inline: 5em;
   }
   
   ul.MuiPagination-ul li button {
